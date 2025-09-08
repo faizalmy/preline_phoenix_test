@@ -32,7 +32,7 @@ defmodule PrelinePhoenixTestWeb.Endpoint do
     socket "/phoenix/live_reload/socket", Phoenix.LiveReloader.Socket
     plug Phoenix.LiveReloader
     plug Phoenix.CodeReloader
-    plug Phoenix.Ecto.CheckRepoStatus, otp_app: :preline_phoenix_test
+    # plug Phoenix.Ecto.CheckRepoStatus, otp_app: :preline_phoenix_test  # Disabled - no database
   end
 
   plug Phoenix.LiveDashboard.RequestLogger,

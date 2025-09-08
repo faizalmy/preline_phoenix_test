@@ -9,7 +9,7 @@ defmodule PrelinePhoenixTest.Application do
   def start(_type, _args) do
     children = [
       PrelinePhoenixTestWeb.Telemetry,
-      PrelinePhoenixTest.Repo,
+      # PrelinePhoenixTest.Repo,  # Disabled - no database needed
       {DNSCluster, query: Application.get_env(:preline_phoenix_test, :dns_cluster_query) || :ignore},
       {Phoenix.PubSub, name: PrelinePhoenixTest.PubSub},
       # Start a worker by calling: PrelinePhoenixTest.Worker.start_link(arg)
