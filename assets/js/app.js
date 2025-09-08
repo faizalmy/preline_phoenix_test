@@ -25,6 +25,9 @@ import {LiveSocket} from "phoenix_live_view"
 import {hooks as colocatedHooks} from "phoenix-colocated/preline_phoenix_test"
 import topbar from "../vendor/topbar"
 
+// Preline UI
+import "preline"
+
 const csrfToken = document.querySelector("meta[name='csrf-token']").getAttribute("content")
 const liveSocket = new LiveSocket("/live", Socket, {
   longPollFallbackMs: 2500,
@@ -80,4 +83,9 @@ if (process.env.NODE_ENV === "development") {
     window.liveReloader = reloader
   })
 }
+
+// Initialize Preline components
+document.addEventListener('DOMContentLoaded', () => {
+  window.HSStaticMethods.autoInit();
+});
 
